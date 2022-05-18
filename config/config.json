@@ -1,0 +1,36 @@
+{
+  "development": {
+    "username": "goezyxvrppoflm",
+    "password": "143580ed1a19d94b223ba0445c4fdab4ec9fc36f5d43ebdc10778bbfa82672df",
+    "database": "d62qm0i1j8pndt",
+    "host": "ec2-52-4-104-184.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+          "require": true,
+          "rejectUnauthorized": false 
+      }
+    }
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "WebBanGiayDB",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "goezyxvrppoflm",
+    "password": "143580ed1a19d94b223ba0445c4fdab4ec9fc36f5d43ebdc10778bbfa82672df",
+    "database": "d62qm0i1j8pndt",
+    "host": "ec2-52-4-104-184.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+          "require": true,
+          "rejectUnauthorized": false 
+      }
+    }
+  }
+}

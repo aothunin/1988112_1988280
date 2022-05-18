@@ -1,0 +1,8 @@
+.review_box #starList a {
+    color: yellow;
+}
+.review_box ul.list i.disabled,
+.product_description_area .tab-content .show .review_item .media-body i.disabled,
+.product_description_area .tab-content .show .rating_list .list a i.disabled {
+    color: lightgray;
+}

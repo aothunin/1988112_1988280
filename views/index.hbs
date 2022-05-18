@@ -1,0 +1,154 @@
+  <main class="site-main">
+    
+    <!--================ Hero banner start =================-->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="row no-gutters align-items-center pt-60px">
+          <div class="col-5 d-none d-sm-block">
+            <div class="hero-banner__img">
+              <img class="img-fluid" src="img/home/hero-banner.png" alt="">
+            </div>
+          </div>
+          <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+            <div class="hero-banner__content">
+              <h4>Chào mừng đến với chúng tôi</h4>
+              <h1>Hãy tìm kiếm những đôi giày theo ý bạn</h1>
+              <p>Sản phẩm chúng tôi mang đến sẽ làm thoả mãn quý khách, hãy để chúng tôi chắm sóc quý khách từ đôi chân</p>
+              <a class="button button-hero" href="/products">Tìm kiếm ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ Hero banner start =================-->
+
+    <!--================ Hero Carousel start =================-->
+    <section class="section-margin mt-0">
+      <div class="owl-carousel owl-theme hero-carousel">
+        {{#each categories}}
+        <div class="hero-carousel__slide">
+          <img src="{{imagepath}}" alt="" class="img-fluid">
+          <a href="/products?category={{id}}" class="hero-carousel__slideOverlay">
+            <h3>{{name}}</h3>
+            <p>{{summary}}</p>
+          </a>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    <!--================ Hero Carousel end =================-->
+
+    <!-- ================ trending product section start ================= -->  
+    <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Các sản phẩm được ưa chuộng</p>
+          <h2>Xu hướng <span class="section-intro__style">Mua sắm Giày</span></h2>
+        </div>
+        <div class="row">
+          {{#each trendingProducts}}
+          <div class="col-md-6 col-lg-4 col-xl-3">
+             {{> product }}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+    <!-- ================ trending product section end ================= -->  
+
+
+   
+
+    <!-- ================ Blog section start ================= -->  
+    <section class="blog">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Thông tin về thị trường giày</p>
+          <h2>Tin <span class="section-intro__style"> mới nhất</span></h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card card-blog">
+              <div class="card-blog__img">
+                <img class="card-img rounded-0" src="img/blog/blog1.png" alt="">
+              </div>
+              <div class="card-body">
+                <ul class="card-blog__info">
+                  <li><a href="#">Bởi Admin</a></li>
+                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Bình luận</a></li>
+                </ul>
+                <h4 class="card-blog__title"><a href="#">Các kiểu quần áo dễ phối giày nhất trên thị trường hiện nay</a></h4>
+                <p>Bạn có bao giờ phân vân tại sao đôi giày bạn mua chỉ hợp với quần jean hay kaki, hay bạn có bao giờ nhận thấy giày của bạn có màu sắc rất khó phối đồ</p>
+                <a class="card-blog__link" href="#">Xem thêm <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card card-blog">
+              <div class="card-blog__img">
+                <img class="card-img rounded-0" src="img/blog/blog2.png" alt="">
+              </div>
+              <div class="card-body">
+                <ul class="card-blog__info">
+                  <li><a href="#">Bởi Admin</a></li>
+                  <li><a href="#"><i class="ti-comments-smiley"></i> 211 Bình luận</a></li>
+                </ul>
+                <h4 class="card-blog__title"><a href="/single_blog">Chất liệu của quần áo bạn chọn ảnh hưởng lớn đến phong cách của đôi giày mà bạn sử dụng</a></h4>
+                <p>Hãy cân nhắc tuổi tác, cân nặng, đặc điểm hình thể trước khi chọn kiểu quần ao mà bạn cần mua vì nó ảnh hưởng rất lớn đến đôi giày bạn định mang</p>
+                <a class="card-blog__link" href="#">Xem thêm <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card card-blog">
+              <div class="card-blog__img">
+                <img class="card-img rounded-0" src="img/blog/blog3.png" alt="">
+              </div>
+              <div class="card-body">
+                <ul class="card-blog__info">
+                  <li><a href="#">Bởi Admin</a></li>
+                  <li><a href="#"><i class="ti-comments-smiley"></i> 105 Bình luận</a></li>
+                </ul>
+                <h4 class="card-blog__title"><a href="/single_blog">Hãy là người tiêu dùng thông minh</a></h4>
+                <p>Việc chọn giày không khó nhưng chọn sai sẽ gây cho bạn sự khó chịu và lãng phí, nên hãy đọc những lời khuyên bổ ích sau trước khi chọn đôi giày cho riêng bạn</p>
+                <a class="card-blog__link" href="#">Xem thêm <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================ Blog section end ================= -->  
+
+    <!-- ================ Subscribe section start ================= --> 
+    <section class="subscribe-position">
+      <div class="container">
+        <div class="subscribe text-center">
+          <h3 class="subscribe__title">Góp ý và thắc mắc</h3>
+          <p>Chúng tôi luôn trân trọng mọi góp ý và thắc mắc từ quý khách, xin hãy để lại thông tin liên lạc cho chúng tôi. <br> Chúng tôi sẽ liên hệ lại quý khách trong thời gian sớm nhất </p>
+          <div id="mc_embed_signup">
+            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+              <div class="form-group ml-sm-auto">
+                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Địa chỉ Email của bạn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ Email của bạn '" >
+                <div class="info"></div>
+              </div>
+              <button class="button button-subscribe mr-auto mb-1" type="submit">Gửi</button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- ================ Subscribe section end ================= --> 
+
+    
+
+  </main>
+

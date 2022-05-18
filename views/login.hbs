@@ -1,0 +1,68 @@
+
+	<!-- ================ start banner area ================= -->	
+  <section class="blog-banner-area" id="blog">
+    <div class="container h-100">
+      <div class="blog-banner">
+        <div class="text-center">
+          <h1>Thông tin khách hàng</h1>
+          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Đăng nhập</a></li>
+        
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ end banner area ================= -->
+  
+  <!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>Bạn là khách hàng mới?</h4>
+							<p>Hãy đăng ký để nhận được thông tin nhanh nhất và các ưu đãi từ chúng tôi</p>
+							<a class="button button-account" href="/users/register">Tạo tài khoản</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+						<h3>Đăng nhập</h3>
+						<form class="row login_form" action="/users/login" id="contactForm" method="POST">
+							{{#if message}}
+							<div class="col-md-12 form-group alert {{type}}">
+								<strong>{{message}}</strong>
+							</div>
+							{{/if}}
+							<div class="col-md-12 form-group">
+								<input type="email" class="form-control" id="username" name="username" placeholder="Địa chỉ Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ Email'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="creat_account">
+									<input type="checkbox" id="keepLoggedIn" name="keepLoggedIn">
+									<label for="keepLoggedIn">Duy trì trạng thái đăng nhập</label>
+								</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="button button-login w-100">Đăng nhập</button>
+								<a href="#">Quên mật khẩu?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+
+
+
+  

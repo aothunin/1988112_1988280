@@ -1,0 +1,224 @@
+
+<script src="/vendors/nouislider/nouislider.min.js"></script>
+	<!-- ================ start banner area ================= -->	
+  <section class="blog-banner-area" id="blog">
+    <div class="container h-100">
+      <div class="blog-banner">
+        <div class="text-center">
+          <h1>Tìm kiếm & mua sắm</h1>
+          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Tìm kiếm</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Theo cách của bạn</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ end banner area ================= -->
+
+
+	<!-- ================ category section start ================= -->		  
+  <section class="section-margin--small mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5">
+          <div class="sidebar-categories">
+            <div class="head">Tìm theo Chủng loại</div>
+            <ul class="main-categories">
+              <li class="common-filter">
+                <form action="#">
+                  <ul>
+                    {{#each categories}}
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="category{{id}}" name="category">
+                    <label for="category{{id}}" onclick="selectParam('category', {{id}}, true)">{{name}}<span> ({{Products.length}})</span></label></li>
+                   {{/each}}
+                  </ul>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-filter">
+            <div class="top-filter-head">Lọc sản phản phẩm</div>
+            <div class="common-filter">
+              <div class="head">theo Thương hiệu</div>
+              <form action="#">
+                <ul>
+                  {{#each brands}}
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="brand{{id}}" name="brand">
+                  <label for="brand{{id}}" onclick="selectParam('brand',{{id}})">{{name}}
+                    <span>({{Products.length}})</span></label></li>
+                  {{/each}}
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">theo Màu sắc</div>
+              <form action="#">
+                <ul>
+                  {{#each colors}}
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="color{{id}}" name="color">
+                  <label for="color{{id}}" onclick="selectParam('color',{{id}})">{{name}}
+                    <span>({{ProductColors.length}})</span></label></li>
+                  {{/each}}
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">theo Giá</div>
+              <div class="price-range-area">
+                <div id="price-range"></div>
+                <div class="value-wrapper d-flex">
+                  <div class="price">Giá:</div>
+                 
+                  <div id="lower-value"></div>
+                   <span>&nbsp;VND</span>
+                  <div class="to">đến</div>
+                 
+                  <div id="upper-value"></div>
+                   <span>&nbsp;VND</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-7">
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+              <select id="sort" onchange="selectParam('sort', this.value)"> 
+                <option value="name">Sắp xếp theo Tên sản phẩm</option>
+                <option value="price">Sắp xếp theo Giá từ thấp đến cao</option>
+                <option value="overallReview">Sắp xếp theo Đánh giá từ cao xuống thấp</option>
+              </select>
+            </div>
+            <div class="sorting mr-auto">
+              <select id="limit" onchange="selectParam('limit', this.value)">
+                <option value="9">Hiển thị 9 sản phẩm</option>
+                <option value="18">Hiển thị 18 sản phẩm</option>
+                <option value="36">Hiển thị 36 sản phẩm</option>
+              </select>
+            </div>
+            <div>
+               <form action="/products" method="GET">
+              <div class="input-group filter-bar-search">
+                <input type="text" name="search" placeholder="Tìm kiếm">
+                <div class="input-group-append">
+                  <button type="submit"><i class="ti-search"></i></button>
+                </div>
+              </div>
+               </form>
+            </div>
+          </div>
+          <!-- End Filter Bar -->
+          <!-- Start Best Seller -->
+          <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+              {{#each products}}
+              <div class="col-md-6 col-lg-4">
+                {{> product }}
+              </div>
+              {{/each}}
+            </div>
+            <div class="row justify-content-center">
+            <nav aria-label="Page navigation example" id="pagination">
+            {{{ createPagination pagination paginationClass="pagination"}}}
+            </nav>
+            </div>
+          </section>
+          <!-- End Best Seller -->
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ category section end ================= -->		  
+
+
+
+	    <!-- ================ Subscribe section start ================= --> 
+    <section class="subscribe-position">
+      <div class="container">
+        <div class="subscribe text-center">
+          <h3 class="subscribe__title">Góp ý và thắc mắc</h3>
+          <p>Chúng tôi luôn trân trọng mọi góp ý và thắc mắc từ quý khách, xin hãy để lại thông tin liên lạc cho chúng tôi. <br> Chúng tôi sẽ liên hệ lại quý khách trong thời gian sớm nhất </p>
+          <div id="mc_embed_signup">
+            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+              <div class="form-group ml-sm-auto">
+                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Địa chỉ Email của bạn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Địa chỉ Email của bạn '" >
+                <div class="info"></div>
+              </div>
+              <button class="button button-subscribe mr-auto mb-1" type="submit">Gửi</button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- ================ Subscribe section end ================= --> 
+
+     
+
+<script>
+  let urlParams = new URLSearchParams(location.search);
+  let params = {
+    category:0,
+    brand: 0,
+    color: 0,
+    min: 0,
+    max: 10000000,
+    limit: 9,
+    page: 1,
+    sort: 'name',
+    search: ''
+  }
+
+// Khởi tạo tất cả các param cho urlParams
+  for (let key in params) {
+    if (!urlParams.has(key)) {
+      urlParams.append(key, params[key]);
+    }
+  }
+
+  $(document).ready(() => {
+    // Thiết lập trạng thái cho các checkbox của browse và filter
+      let checkboxes = ['category', 'brand', 'color']
+      for (let key of checkboxes) {
+              let control = $(`#${key}${urlParams.get(key)}`);
+              if (control) {
+                 $(control).prop('checked', true);
+               }
+      }
+  // Thiết lập trạng thái cho combo box của sort và limit
+      $('#sort').val(urlParams.get('sort'));
+      $('#limit').val(urlParams.get('limit'));
+
+      $('#pagination li').addClass('page-item');
+      $('#pagination li a').addClass('page-link')
+
+      let savePage = urlParams.get('page');
+      $('#pagination li a').each((index, item) => {
+        // href = /products?page=2
+        let page = $(item).attr('href').split('=')[1];
+        urlParams.set('page', page);
+        let href = '/products?' + urlParams.toString();
+        $(item).attr('href', href);
+      });
+      urlParams.set('page', savePage);
+  });
+
+  function selectParam(key, value, reset = false) {
+    if (reset) {
+        for (let key in params) {
+        urlParams.set(key, params[key]);
+      }
+    }
+    urlParams.set(key, value);
+    let url = `/products?${urlParams.toString()}`;
+    location.href = url;
+  }
+</script>
